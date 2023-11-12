@@ -16,8 +16,4 @@ class Extract is export {
     method xml {
         qqx`pdftohtml -stdout -xml {$!file}`
     }
-
-    method json {
-        qqx`pdf2json {$!file} /dev/stdout`
-    }
 }
