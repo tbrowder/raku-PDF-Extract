@@ -7,7 +7,7 @@ Simple binding of the pdftotext command line utility
 ### Installation
 
 1. ```brew install poppler``` (for MacOS)
-2. ```zef install PDF::To::Text```
+2. ```zef install PDF::Extract```
 
 
 ...
