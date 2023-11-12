@@ -12,8 +12,6 @@ Simple binding of the pdftotext command line utility
 ### Synopsis
 
 ```
-
-```
 use PDF::Extract;
 
 my $extract = Extract.new: file => '../resources/sample.pdf';
