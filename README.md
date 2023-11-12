@@ -6,10 +6,21 @@ Simple binding of the pdftotext command line utility
 
 ### Installation
 
-1. ```brew install poppler``` (for MacOS)
+1. ```brew install poppler``` for MacOS)
 2. ```zef install PDF::Extract```
 
+### Synopsis
 
+```
+
+```
+use PDF::Extract;
+
+my $extract = Extract.new: file => '../resources/sample.pdf';
+
+say $extract.text;
+say $extract.html;
+say $extract.xml;
 ...
 
 ### Copyright
