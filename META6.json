@@ -14,7 +14,7 @@
     "PDF::Extract": "lib/PDF/Extract.rakumod"
   },
   "resources": [
-    "/resources/sample.pdf"
+    "sample.pdf"
   ],
   "license": "Artistic-2.0",
   "tags": [

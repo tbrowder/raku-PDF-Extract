@@ -17,3 +17,8 @@ class Extract is export {
         qqx`pdftohtml -stdout -xml {$!file}`
     }
 }
+
+
+sub my-sample-pdf is export {
+    %?RESOURCES<sample.pdf>.absolute
+}
