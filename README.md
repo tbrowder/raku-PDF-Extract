@@ -6,8 +6,10 @@ Simple binding of the pdftotext command line utility
 
 ### Installation
 
-1. ```brew install poppler``` (ie. MacOS)
+1. ```brew install poppler``` (MacOS) or ```sudo apt-get install poppler-utils``` (ubuntu)
 2. ```zef install PDF::Extract```
+
+To install poppler on other popular (geddit?) systems such as Nix or Windows, please see the installation instructions [here](https://poppler.freedesktop.org) and use your Nix package manager (e.g. ```sudo aptitude``` on Debian) or go [here](https://github.com/oschwartz10612/poppler-windows) for Windoze binaries (this module not yet tested on Windows).
 
 ### Synopsis
 

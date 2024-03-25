@@ -3,7 +3,7 @@ use lib '../lib';
 
 use PDF::Extract;
 
-my $extract = Extract.new: file => '../resources/sample.pdf';
+my $extract = Extract.new: file => '../resources/sample copy.pdf';
 
 $extract.first = 0;
 $extract.last = 2;

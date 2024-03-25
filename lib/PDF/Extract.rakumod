@@ -14,19 +14,23 @@ class Extract is export {
     }
 
     method text {
-        qqx`pdftotext -f {$!first} -l {$!last} {$!file} -`
+        qqx`pdftotext -f {$!first} -l {$!last} '{$.file}' -`
     }
 
     method html {
-        qqx`pdftohtml -f {$!first} -l {$!last} -stdout {$!file}`
+        qqx`pdftohtml -f {$!first} -l {$!last} -stdout '{$.file}'`
     }
 
     method xml {
-        qqx`pdftohtml -f {$!first} -l {$!last} -stdout -xml {$!file}`
+        qqx`pdftohtml -f {$!first} -l {$!last} -stdout -xml '{$.file}'`
     }
 }
 
-
-sub my-sample-pdf is export {
-    %?RESOURCES<sample.pdf>.absolute
+# test support
+sub load-sample-pdf is export {
+    my $contents = slurp %?RESOURCES<sample.pdf>, :bin;
+    spurt "$*HOME/sample.pdf", $contents;
+}
+sub drop-sample-pdf is export {
+    unlink "$*HOME/sample.pdf";
 }
