@@ -1,4 +1,4 @@
-unit module PDF::Extract:ver<0.0.2>:auth<Steve Roe (librasteve@furnival.net)>;
+unit module PDF::Extract:ver<0.0.3>:auth<Steve Roe (librasteve@furnival.net)>;
 #viz. https://linux.die.net/man/1/pdftotext
 #viz. https://linux.die.net/man/1/pdftohtml
 #viz. https://www.nu42.com/2014/09/scraping-pdf-documents-without-losing.html
@@ -23,6 +23,23 @@ class Extract is export {
 
     method xml {
         qqx`pdftohtml -f {$!first} -l {$!last} -stdout -xml '{$.file}'`
+    }
+
+    method so {
+        qqx`pdfinfo '{$.file}'`.so
+    }
+
+    method info {
+        if self.so {
+            my @lines = qqx`pdfinfo '{ $.file }'`.lines;
+
+            my %hash;
+            for @lines -> $line {
+                my ($k,$v) = $line.split(":");
+                %hash{$k.trim} = $v.trim;
+            }
+            %hash;
+        }
     }
 }
 

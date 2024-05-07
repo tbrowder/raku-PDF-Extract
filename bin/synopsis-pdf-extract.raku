@@ -12,3 +12,7 @@ $extract.range: 0..1;
 say $extract.text;
 say $extract.html;
 say $extract.xml;
+
+say $extract.so;   #test for PDF headers
+say $extract.info;
+say $extract.info<CreationDate>;

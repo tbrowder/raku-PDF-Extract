@@ -1,7 +1,7 @@
 {
   "name": "PDF::Extract",
   "description": "simple extract PDF to text|html|xml",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "perl": "6.d",
   "authors": [
     "librasteve"

@@ -21,6 +21,10 @@ my $extract = Extract.new: file => '../resources/sample.pdf';
 say $extract.text;
 say $extract.html;
 say $extract.xml;
+
+say $extract.so;   #test for PDF headers
+say $extract.info;
+say $extract.info<CreationDate>;
 ...
 
 ### Copyright
