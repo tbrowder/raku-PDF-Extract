@@ -30,16 +30,7 @@ class Extract is export {
     }
 
     method info {
-        if self.so {
-            my @lines = qqx`pdfinfo '{ $.file }'`.lines;
-
-            my %hash;
-            for @lines -> $line {
-                my ($k,$v) = $line.split(":");
-                %hash{$k.trim} = $v.trim;
-            }
-            %hash;
-        }
+        Map.new: qqx`pdfinfo '{ $.file }'`.lines.map(*.split(":", 2).map(*.trim).Slip)
     }
 }
 
