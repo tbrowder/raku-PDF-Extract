@@ -30,7 +30,7 @@ class Extract is export {
     }
 
     method info {
-        Map.new: qqx`pdfinfo '{ $.file }'`.lines.map(*.split(":", 2)>>.trim.Slip)
+        Map.new: qqx`pdfinfo '{ $.file }'`.lines.map(*.split(":", 2)>>.trim.pairup)
     }
 }
 
