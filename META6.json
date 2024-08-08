@@ -19,7 +19,7 @@
     "sample.pdf",
     "sample copy.pdf"
   ],
-  "source-url": "https://github.com/librasteve/raku-PDF-Extract.git",
+  "source-url": "https://github.com/tbrowder/raku-PDF-Extract.git",
   "tags": [
     "PDF",
     "Extract",

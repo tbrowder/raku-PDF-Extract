@@ -1,6 +1,6 @@
 use Test;
 
-use PDF::Extract
+use PDF::Extract;
 
 use-ok "PDF::Extract";
 
