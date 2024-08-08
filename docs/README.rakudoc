@@ -1,6 +1,6 @@
 =begin pod
 
-=TITLE PDF::Extract
+=head1 PDF::Extract
 
 Simple binding of the pdftotext command line utility
 
@@ -30,7 +30,7 @@ C<choco install poppler>
 
 C<zef install PDF::Extract>
 
-=SYNOPSIS
+=head1 SYNOPSIS
 
 =begin code
 use PDF::Extract;

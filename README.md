@@ -1,7 +1,5 @@
-TITLE
-=====
-
 PDF::Extract
+============
 
 Simple binding of the pdftotext command line utility
 
@@ -30,8 +28,6 @@ Step 2
 
 SYNOPSIS
 ========
-
-
 
     use PDF::Extract;
 
