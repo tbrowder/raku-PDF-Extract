@@ -1,0 +1,56 @@
+=begin pod
+
+=head1 PDF::Extract
+
+Simple binding of the pdftotext command line utility
+
+=head1 Installation
+
+=head2 Step 1 
+
+=begin item 
+Linux (Debian/Ubuntu)
+
+C<sudo apt-get install poppler-utils>
+=end item
+
+=begin item 
+MacOS
+
+C<brew install poppler>
+=end item
+
+=begin item 
+Windows
+
+C<choco install poppler>
+=end item
+
+=head2 Step 2
+
+C<zef install PDF::Extract>
+
+=head1 SYNOPSIS
+
+=begin code
+use PDF::Extract;
+
+my $extract = Extract.new: file => '../resources/sample.pdf';
+
+say $extract.text;
+say $extract.html;
+say $extract.xml;
+
+say $extract.so; # test for PDF headers
+say $extract.info;
+say $extract.info<CreationDate>;
+...
+=end code
+
+=head1 COPYRIGHT and LICENSE
+
+Copyright © 2023 Henley Cloud Consulting Ltd.
+
+This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
+
+=end pod

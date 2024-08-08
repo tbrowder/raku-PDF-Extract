@@ -1,31 +1,51 @@
-[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
-
-# raku PDF::Extract
+PDF::Extract
+============
 
 Simple binding of the pdftotext command line utility
 
-### Installation
+Installation
+============
 
-1. ```brew install poppler``` (MacOS) or ```sudo apt-get install poppler-utils``` (ubuntu)
-2. ```zef install PDF::Extract```
+Step 1 
+-------
 
-To install poppler on other popular (geddit?) systems such as Nix or Windows, please see the installation instructions [here](https://poppler.freedesktop.org) and use your Nix package manager (e.g. ```sudo aptitude``` on Debian) or go [here](https://github.com/oschwartz10612/poppler-windows) for Windoze binaries (this module not yet tested on Windows).
+  * Linux (Debian/Ubuntu)
 
-### Synopsis
+    `sudo apt-get install poppler-utils`
 
-```
-use PDF::Extract;
+  * MacOS
 
-my $extract = Extract.new: file => '../resources/sample.pdf';
+    `brew install poppler`
 
-say $extract.text;
-say $extract.html;
-say $extract.xml;
+  * Windows
 
-say $extract.so;   #test for PDF headers
-say $extract.info;
-say $extract.info<CreationDate>;
-...
+    `choco install poppler`
 
-### Copyright
-copyright(c) 2023 Henley Cloud Consulting Ltd.
+Step 2
+------
+
+`zef install PDF::Extract`
+
+SYNOPSIS
+========
+
+    use PDF::Extract;
+
+    my $extract = Extract.new: file => '../resources/sample.pdf';
+
+    say $extract.text;
+    say $extract.html;
+    say $extract.xml;
+
+    say $extract.so; # test for PDF headers
+    say $extract.info;
+    say $extract.info<CreationDate>;
+    ...
+
+COPYRIGHT and LICENSE
+=====================
+
+Copyright © 2023 Henley Cloud Consulting Ltd.
+
+This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
+
