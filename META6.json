@@ -17,7 +17,7 @@
   },
   "resources": [
     "sample.pdf",
-    "sample copy.pdf"
+    "sample-copy.pdf"
   ],
   "source-url": "https://github.com/tbrowder/raku-PDF-Extract.git",
   "tags": [
