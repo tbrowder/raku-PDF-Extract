@@ -1,0 +1,10 @@
+Revision history for PDF::Extract
+
+{{$NEXT}}
+    - First version under App::Mi6 management:
+    + added 3OS *.yml test files
+    + added docs/README.rakudoc to auto-generate the README.md
+      file from pod
+
+0.0.4  2024-08-08T00:00:00+00:00
+    -previous manual release
