@@ -26,6 +26,8 @@ jobs:
         with:
           raku-version: ${{ matrix.raku-version }}
       - name: Install Dependencies
-        run: zef install --/test --test-depends --deps-only .
+        run: |
+          choco install poppler
+          zef install --/test --test-depends --deps-only .
       - name: Run Tests
         run: zef install .

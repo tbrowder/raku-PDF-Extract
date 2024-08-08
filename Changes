@@ -2,9 +2,14 @@ Revision history for PDF::Extract
 
 {{$NEXT}}
     - First version under App::Mi6 management:
-    + added 3OS *.yml test files
-    + added docs/README.rakudoc to auto-generate the README.md
-      file from pod
+      + added 3OS .github/workflows/*.yml test files
+      + added docs/README.rakudoc to auto-generate the README.md
+        file from pod
+      + added dist.ini file to define desired mi6 actions
+      + moved original README.md file to docs/README.md.orig
+    - Added the load-test suggested by @ugexe
+    - Reworked the README to show actual mods to install
+      on MacOS and Windows (and tested them in the workflows tests)
 
 0.0.4  2024-08-08T00:00:00+00:00
     -previous manual release

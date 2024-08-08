@@ -1,15 +1,17 @@
 {
-  "name": "PDF::Extract",
-  "description": "simple extract PDF to text|html|xml",
-  "version": "0.0.4",
-  "perl": "6.d",
+  "api": "1",
+  "auth": "zef:librasteve",
   "authors": [
     "librasteve"
   ],
-  "auth": "zef:librasteve",
-  "depends": [],
-  "build-depends": [],
-  "test-depends": [],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "simple extract PDF to text|html|xml",
+  "license": "Artistic-2.0",
+  "name": "PDF::Extract",
+  "perl": "6.d",
   "provides": {
     "PDF::Extract": "lib/PDF/Extract.rakumod"
   },
@@ -17,7 +19,7 @@
     "sample.pdf",
     "sample copy.pdf"
   ],
-  "license": "Artistic-2.0",
+  "source-url": "https://github.com/librasteve/raku-PDF-Extract.git",
   "tags": [
     "PDF",
     "Extract",
@@ -25,6 +27,7 @@
     "html",
     "xml"
   ],
-  "api": "1",
-  "source-url": "git://github.com/librasteve/raku-PDF-Extract.git"
+  "test-depends": [
+  ],
+  "version": "0.0.4"
 }
