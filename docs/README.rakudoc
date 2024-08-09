@@ -76,24 +76,43 @@ The last page to extract (0: all)
 =head2 Methods
 
 =begin item
-?
+C<range($first..$last)>
 
+First and last pages to extract
 =end item
 
 =begin item
-?
+C<text>
 
+Extracts text from pages range
 =end item
 
 =begin item
-?
+C<html>
 
+Extracts html from pages range
 =end item
 
+=begin item
+C<xml>
 
+Extracts xml from pages range
+=end item
 
+=begin item
+C<pdfinfo>
 
-included binary, ''
+Has pdfinfo? (Bool)
+=end item
+
+=begin item
+C<info>
+
+Extracts pdfinfo
+=end item
+
+=head2 Subroutines
+
 
 =head1 COPYRIGHT and LICENSE
 
