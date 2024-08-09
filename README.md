@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/tbrowder/raku-PDF-Extract/workflows/linux/badge.svg)](https://github.com/tbrowder/raku-PDF-Extract/actions) [![Actions Status](https://github.com/tbrowder/raku-PDF-Extract/workflows/macos/badge.svg)](https://github.com/tbrowder/raku-PDF-Extract/actions) [![Actions Status](https://github.com/tbrowder/raku-PDF-Extract/workflows/windows/badge.svg)](https://github.com/tbrowder/raku-PDF-Extract/actions)
+
 PDF::Extract
 ============
 

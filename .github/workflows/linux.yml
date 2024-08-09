@@ -27,4 +27,4 @@ jobs:
           sudo apt-get install -y poppler-utils
           zef install --/test --deps-only .
       - name: Run Tests
-        run: zef install .
+        run: zef --debug install .
