@@ -20,7 +20,7 @@ class Extract is export {
     method text {
         if $os.is-windows {
             #qqx`pdftotext -nopgbrk -nodiag -eol dos -f {$!first} -l {$!last} '{$.file}' -`
-            qqx`pdftotext -nopgbrk -nodiag -eol dos -f {$!first} -l {$!last} '{$.file}'`;
+#            qqx`pdftotext -nopgbrk -nodiag -eol dos -f {$!first} -l {$!last} '{$.file}'`;
             qqx`pdftotext -listenc -f {$!first} -l {$!last} '{$.file}'`;
         }
         else {
