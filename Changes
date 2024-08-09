@@ -1,6 +1,8 @@
 Revision history for PDF::Extract
 
 {{$NEXT}}
+
+0.0.4  2024-08-09T17:02:09+01:00
     - First version under App::Mi6 management:
       + added 3OS .github/workflows/*.yml test files
       + added docs/README.rakudoc to auto-generate the README.md
