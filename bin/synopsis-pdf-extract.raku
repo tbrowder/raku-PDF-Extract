@@ -1,10 +1,10 @@
 #!/usr/bin/env raku
-use lib '../lib';
 
 use PDF::Extract;
 use Data::Dump::Tree;
 
-my $extract = Extract.new: file => '../resources/sample copy.pdf';
+#my $extract = Extract.new: file => '../resources/sample-copy.pdf';
+my $extract = Extract.new: file => './resources/sample.pdf';
 
 $extract.first = 0;
 $extract.last = 2;

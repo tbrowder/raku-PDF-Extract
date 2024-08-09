@@ -1,4 +1,5 @@
-unit module PDF::Extract:ver<0.0.4>:auth<Steve Roe (librasteve@furnival.net)>;
+unit module PDF::Extract;
+
 #viz. https://linux.die.net/man/1/pdftotext
 #viz. https://linux.die.net/man/1/pdftohtml
 #viz. https://www.nu42.com/2014/09/scraping-pdf-documents-without-losing.html
