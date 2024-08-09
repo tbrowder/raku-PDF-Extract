@@ -19,6 +19,7 @@ Revision history for PDF::Extract
       file
     - Removed the subroutines and incorporated the test into a cmp-ok test
     - Removed the bin file
+    - Added dependency QueryOS to help port to Windows
 
 0.0.4  2024-08-08T00:00:00+00:00
     -previous manual release

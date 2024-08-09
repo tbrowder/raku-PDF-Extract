@@ -18,8 +18,7 @@ cmp-ok $xml, '~~', Str;
 
 # test from the original version
 # ok ($extract.text ~~ /quam/).so,            '.text';
-cmp-ok $text, '~~', /quam/;
-
+cmp-ok $text, '~~', /:i quam/;
 
 done-testing;
 
