@@ -1,9 +1,9 @@
-[![Actions Status](https://github.com/tbrowder/raku-PDF-Extract/workflows/linux/badge.svg)](https://github.com/tbrowder/raku-PDF-Extract/actions) [![Actions Status](https://github.com/tbrowder/raku-PDF-Extract/workflows/macos/badge.svg)](https://github.com/tbrowder/raku-PDF-Extract/actions) [![Actions Status](https://github.com/tbrowder/raku-PDF-Extract/workflows/windows/badge.svg)](https://github.com/tbrowder/raku-PDF-Extract/actions)
+[![Actions Status](https://github.com/librasteve/raku-PDF-Extract/workflows/linux/badge.svg)](https://github.com/librasteve/raku-PDF-Extract/actions) [![Actions Status](https://github.com/librasteve/raku-PDF-Extract/workflows/macos/badge.svg)](https://github.com/librasteve/raku-PDF-Extract/actions) [![Actions Status](https://github.com/librasteve/raku-PDF-Extract/workflows/windows/badge.svg)](https://github.com/librasteve/raku-PDF-Extract/actions)
 
 PDF::Extract
 ============
 
-Simple binding of the pdftotext command line utility
+Simple binding of the pdftotext command line utilit
 
 Installation
 ============
@@ -32,8 +32,8 @@ SYNOPSIS
 ========
 
     use PDF::Extract;
-
-    my $extract = Extract.new: file => '../resources/sample.pdf';
+    my $file = "some-pdf";
+    my $extract = Extract.new: :$file;
 
     say $extract.text;
     say $extract.html;
@@ -43,6 +43,53 @@ SYNOPSIS
     say $extract.info;
     say $extract.info<CreationDate>;
     ...
+
+DESCRIPION
+==========
+
+This module provides an interface to the 'pdftotext' program which is part of the 'poppler' library. The class provided, 'Extract', has the following attributes and methods to interrogate its PDF file:
+
+Attributes
+----------
+
+  * `has $.file`
+
+    Path of the PDF file
+
+  * `has $.first is rw = 1`
+
+    The first page to extract
+
+  * `has $.last is rw = 0`
+
+    The last page to extract (0: all)
+
+Methods
+-------
+
+  * `range($first..$last)`
+
+    First and last pages to extract
+
+  * `text`
+
+    Extracts text from pages range
+
+  * `html`
+
+    Extracts html from pages range
+
+  * `xml`
+
+    Extracts xml from pages range
+
+  * `pdfinfo`
+
+    Has pdfinfo? (Bool)
+
+  * `info`
+
+    Extracts pdfinfo
 
 COPYRIGHT and LICENSE
 =====================

@@ -2,7 +2,7 @@
 
 =head1 PDF::Extract
 
-Simple binding of the pdftotext command line utility
+Simple binding of the pdftotext command line utilit
 
 =head1 Installation
 
@@ -34,8 +34,8 @@ C<zef install PDF::Extract>
 
 =begin code
 use PDF::Extract;
-
-my $extract = Extract.new: file => '../resources/sample.pdf';
+my $file = "some-pdf";
+my $extract = Extract.new: :$file;
 
 say $extract.text;
 say $extract.html;
@@ -46,6 +46,70 @@ say $extract.info;
 say $extract.info<CreationDate>;
 ...
 =end code
+
+=head1 DESCRIPION
+
+This module provides an interface to the 'pdftotext' program 
+which is part of the 'poppler' library. The class provided, 'Extract',
+has the following attributes and methods to interrogate its PDF file:
+
+=head2 Attributes
+
+=begin item
+C<has $.file>
+
+Path of the PDF file
+=end item
+
+=begin item
+C<has $.first is rw = 1>
+
+The first page to extract
+=end item
+
+=begin item
+C<has $.last is rw = 0>
+
+The last page to extract (0: all)
+=end item
+
+=head2 Methods
+
+=begin item
+C<range($first..$last)>
+
+First and last pages to extract
+=end item
+
+=begin item
+C<text>
+
+Extracts text from pages range
+=end item
+
+=begin item
+C<html>
+
+Extracts html from pages range
+=end item
+
+=begin item
+C<xml>
+
+Extracts xml from pages range
+=end item
+
+=begin item
+C<pdfinfo>
+
+Has pdfinfo? (Bool)
+=end item
+
+=begin item
+C<info>
+
+Extracts pdfinfo
+=end item
 
 =head1 COPYRIGHT and LICENSE
 
