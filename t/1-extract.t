@@ -24,6 +24,9 @@ cmp-ok $xml, '~~', Str;
 if $os.is-windows {
     note "DEBUG: dumping \$text";
     note $eo.text;
+    note $eo.html;
+    note $eo.xml;
+    note $eo.info;
 }
 else {
     cmp-ok $text, '~~', /:i quam/;
