@@ -16,8 +16,6 @@
     "PDF::Extract": "lib/PDF/Extract.rakumod"
   },
   "resources": [
-    "sample.pdf",
-    "sample-copy.pdf"
   ],
   "source-url": "https://github.com/librasteve/raku-PDF-Extract.git",
   "tags": [
