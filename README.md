@@ -67,13 +67,29 @@ Attributes
 Methods
 -------
 
-  * ?
+  * `range($first..$last)`
 
-  * ?
+    First and last pages to extract
 
-  * ?
+  * `text`
 
-included binary, ''
+    Extracts text from pages range
+
+  * `html`
+
+    Extracts html from pages range
+
+  * `xml`
+
+    Extracts xml from pages range
+
+  * `pdfinfo`
+
+    Has pdfinfo? (Bool)
+
+  * `info`
+
+    Extracts pdfinfo
 
 COPYRIGHT and LICENSE
 =====================

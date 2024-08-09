@@ -111,9 +111,6 @@ C<info>
 Extracts pdfinfo
 =end item
 
-=head2 Subroutines
-
-
 =head1 COPYRIGHT and LICENSE
 
 Copyright © 2023 Henley Cloud Consulting Ltd.
