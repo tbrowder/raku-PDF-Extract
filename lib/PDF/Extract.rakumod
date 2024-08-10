@@ -13,6 +13,8 @@ my $os = OS.new;
     has $.first is rw = 1;
     has $.last  is rw = 0;    #ie. all pages
 
+=finish
+
     method range( Range:D $r ) {
         $!first = $r.min;
         $!last  = $r.max;
