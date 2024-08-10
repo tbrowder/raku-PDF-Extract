@@ -1,16 +1,24 @@
 use Test;
 
+use QueryOS;
+
 use PDF::Extract;
 
-use QueryOS;
 my $os = OS.new;
 
+# The input PDF
 my $file = "t/sample.pdf".IO;
 
-my $cmd = "pdftotext $file";
-my $proc  = run $cmd.words, :out;
+=begin comment
+my $file = "t/sample.pdf".IO;
+my $cmd = "pdftotext $file '-'";
+my $proc  = run "pdftotext", $file, '-', :out;
 my $s = $proc.out.slurp(:close);
 cmp-ok $s, '~~', /:i quam/;
+=end comment
+
+my $eo = Extract.new: :$file;
+cmp-ok $eo.text, '~~', /:i quam/;
 
 done-testing;
 
