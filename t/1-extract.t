@@ -9,16 +9,17 @@ my $os = OS.new;
 # The input PDF
 my $file = "t/sample.pdf".IO;
 
-=begin comment
-my $file = "t/sample.pdf".IO;
+#=begin comment
 my $cmd = "pdftotext $file '-'";
 my $proc  = run "pdftotext", $file, '-', :out;
 my $s = $proc.out.slurp(:close);
 cmp-ok $s, '~~', /:i quam/;
-=end comment
+#=end comment
 
+=begin comment
 my $eo = PDF::Extract.new: :$file;
 is $eo.text.contains("quam"), True;
+=end comment
 
 done-testing;
 
