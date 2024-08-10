@@ -44,8 +44,8 @@ SYNOPSIS
     say $extract.info<CreationDate>;
     ...
 
-DESCRIPION
-==========
+DESCRIPTION
+===========
 
 This module provides an interface to the 'pdftotext' program which is part of the 'poppler' library. The class provided, 'Extract', has the following attributes and methods to interrogate its PDF file:
 
