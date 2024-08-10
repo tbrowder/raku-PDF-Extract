@@ -18,9 +18,7 @@ cmp-ok $s, '~~', /:i quam/;
 =end comment
 
 my $eo = PDF::Extract.new: :$file;
-my $text = $eo.text;
-#cmp-ok $text, '~~', /:i quam/;
-cmp-ok $text, '~~', /\S/;
+is $eo.text.contains("quam"), True;
 
 done-testing;
 
