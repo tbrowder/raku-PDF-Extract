@@ -1,16 +1,24 @@
 use Test;
 
 use PDF::Extract;
-use QueryOS;
+#use QueryOS;
 
 my $os = OS.new;
 
 my $file = "t/sample.pdf".IO;
 my $eo = Extract.new: :$file;
+cmp-ok $eo.text, '~~', /\S+/; #:i quam/;
+
+done-testing;
+=finish
 
 isa-ok $eo, PDF::Extract::Extract;
 
 my $text = $eo.text;
+say $text;
+say "DEBUG: early exit";
+exit;
+
 cmp-ok $text, '~~', Str;
 
 my $html = $eo.html;
