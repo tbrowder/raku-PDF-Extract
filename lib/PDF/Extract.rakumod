@@ -1,4 +1,4 @@
-unit module PDF::Extract;
+unit class PDF::Extract;
 
 #viz. https://linux.die.net/man/1/pdftotext
 #viz. https://linux.die.net/man/1/pdftohtml
@@ -7,9 +7,9 @@ unit module PDF::Extract;
 use QueryOS;
 my $os = OS.new;
 
-class Extract is export {
+#class Extract is export {
 
-    has $.file;
+    has $.file is required;
     has $.first is rw = 1;
     has $.last  is rw = 0;    #ie. all pages
 
@@ -20,16 +20,19 @@ class Extract is export {
 
     method text {
         if $os.is-windows {
-            my $proc  = run "pdftotext", $!file, '-', :out;
-            #my $s = $proc.out.slurp(:close);
+            my $proc  = run "pdftotext", '-f', $!first, '-l', $!last, 
+                            $!file, '-', :out;
             $proc.out.slurp(:close);
         }
         else {
-            qqx`pdftotext -f {$!first} -l {$!last} '{$!file}' -`
+            #qqx`pdftotext -f {$!first} -l {$!last} '{$!file}' -`
+            my $proc  = run "pdftotext", '-f', $!first, '-l', $!last, 
+                            $!file, '-', :out;
+            $proc.out.slurp(:close);
         }
     }
-}
 =finish
+}
 
     method html {
         qqx`pdftohtml -f {$!first} -l {$!last} -stdout '{$.file}'`
