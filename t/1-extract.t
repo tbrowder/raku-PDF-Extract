@@ -12,8 +12,9 @@ my $file = "t/sample.pdf".IO;
 #=begin comment
 my $cmd = "pdftotext $file '-'";
 my $proc  = run "pdftotext", $file, '-', :out;
-my $s = $proc.out.slurp(:close);
-cmp-ok $s, '~~', /:i quam/;
+my $text = $proc.out.slurp(:close).lines.join("");
+is $text.contains("quam"), True;
+#cmp-ok $s, '~~', /:i quam/;
 #=end comment
 
 =begin comment
