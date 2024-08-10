@@ -15,7 +15,7 @@ my $text = $proc.out.slurp(:close).lines.join("");
 #say $text;
 
 isa-ok $text, Str, "\$text is a Str";;
-is $text.contains("quam").so, True, "\$text does contain 'quam'";;
+is $text.contains("quam").so, True, "\$text does contain 'quam'";
 #cmp-ok $s, '~~', /:i quam/;
 #=end comment
 

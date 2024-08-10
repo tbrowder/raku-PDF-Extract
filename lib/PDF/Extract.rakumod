@@ -4,35 +4,27 @@ unit class PDF::Extract;
 #viz. https://linux.die.net/man/1/pdftohtml
 #viz. https://www.nu42.com/2014/09/scraping-pdf-documents-without-losing.html
 
-use QueryOS;
-my $os = OS.new;
+#use QueryOS;
+#my $os = OS.new;
 
-#class Extract is export {
+has $.file is required;
+has $.first is rw = 1;
+has $.last  is rw = 0;    #ie. all pages
 
-    has $.file is required;
-    has $.first is rw = 1;
-    has $.last  is rw = 0;    #ie. all pages
+=begin comment
+method range( Range:D $r ) {
+    $!first = $r.min;
+    $!last  = $r.max;
+}
+=end comment
 
-=finish
+method text {
+    my $proc  = run("pdftotext", '-f', $!first, '-l', $!last, 
+                    $!file, '-', :out);
+    my $s = $proc.out.slurp(:close).lines.join("");;
+    $s
+}
 
-    method range( Range:D $r ) {
-        $!first = $r.min;
-        $!last  = $r.max;
-    }
-
-    method text {
-        if $os.is-windows {
-            my $proc  = run "pdftotext", '-f', $!first, '-l', $!last, 
-                            $!file, '-', :out;
-            $proc.out.slurp(:close);
-        }
-        else {
-            #qqx`pdftotext -f {$!first} -l {$!last} '{$!file}' -`
-            my $proc  = run "pdftotext", '-f', $!first, '-l', $!last, 
-                            $!file, '-', :out;
-            $proc.out.slurp(:close);
-        }
-    }
 =finish
 }
 
