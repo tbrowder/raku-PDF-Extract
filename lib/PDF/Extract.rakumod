@@ -23,13 +23,15 @@ class Extract is export {
 #            qqx`pdftotext -nopgbrk -nodiag -eol dos -f {$!first} -l {$!last} '{$.file}'`;
             #qqx`pdftotext -listenc -f {$!first} -l {$!last} '{$.file}'`;
             #qqx`pdftotext -f {$!first} -l {$!last} '{$.file}' -`
-            my $cmd = "pdftotext -f {$!first} -l {$!last} {$.file}";
             # expect zero finds but no error
-            my $proc  = run $cmd.words, :out, :err;
+            #my $cmd = "pdftotext -f {$!first} -l {$!last} {$.file}";
+            my $cmd = "pdftotext {$!file}";
+            my $proc  = run $cmd.words, :out;
             #my @lines  = $proc.out.slurp(:close).lines;
             #@lines2 = $proc.err.slurp(:close).lines;
             #$exit   = $proc.exitcode;
-            $proc.out.slurp(:close);
+            my $s = $proc.out.slurp(:close);
+            $s
         }
         else {
             qqx`pdftotext -f {$!first} -l {$!last} '{$.file}' -`
