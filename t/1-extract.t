@@ -1,9 +1,9 @@
 use Test;
 
 use PDF::Extract;
-#use QueryOS;
 
-my $os = OS.new;
+#use QueryOS;
+#my $os = OS.new;
 
 my $file = "t/sample.pdf".IO;
 my $eo = Extract.new: :$file;
