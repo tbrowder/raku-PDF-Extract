@@ -10,10 +10,12 @@ my $os = OS.new;
 my $file = "t/sample.pdf".IO;
 
 #=begin comment
-my $cmd = "pdftotext $file '-'";
-my $proc  = run "pdftotext", $file, '-', :out;
+my $proc  = run('pdftotext', '-f', '1', '-l', '0', $file, '-', :out);
 my $text = $proc.out.slurp(:close).lines.join("");
-is $text.contains("quam"), True;
+#say $text;
+
+isa-ok $text, Str, "\$text is a Str";;
+is $text.contains("quam").so, True, "\$text does contain 'quam'";;
 #cmp-ok $s, '~~', /:i quam/;
 #=end comment
 
