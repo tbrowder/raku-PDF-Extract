@@ -13,3 +13,4 @@
 .idea/*
 *.iml
 *.tar.gz
+t/sample.txt
