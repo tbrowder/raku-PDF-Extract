@@ -6,11 +6,19 @@ use QueryOS;
 my $os = OS.new;
 
 my $file = "t/sample.pdf".IO;
-my $eo = Extract.new: :$file;
-cmp-ok $eo.text, '~~', /\S+/; #:i quam/;
+
+my $cmd = "pdftotext $file";
+my $proc  = run $cmd.words, :out;
+my $s = $proc.out.slurp(:close);
+cmp-ok $s, '~~', /:i quam/;
 
 done-testing;
+
 =finish
+
+#my $eo = Extract.new: :$file;
+cmp-ok $eo.text, '~~', /\S+/; #:i quam/;
+
 
 isa-ok $eo, PDF::Extract::Extract;
 
