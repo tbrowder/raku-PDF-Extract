@@ -8,8 +8,8 @@ on:
       - '*'
   pull_request:
 
-env:
-  ACTIONS_RUNNER_DEBUG: true
+#env:
+#  ACTIONS_RUNNER_DEBUG: true
 
 jobs:
   raku:
