@@ -14,8 +14,8 @@ my $proc  = run('pdftotext', '-f', '1', '-l', '0', $file, '-', :out);
 my $text = $proc.out.slurp(:close).lines.join("");
 #say $text;
 
-isa-ok $text, Str, "\$text is a Str";;
-is $text.contains("quam").so, True, "\$text does contain 'quam'";
+isa-ok $text, Str, "\$text is a Str";
+is $text.contains("quam"), True, "\$text does contain 'quam'";
 #cmp-ok $s, '~~', /:i quam/;
 #=end comment
 
