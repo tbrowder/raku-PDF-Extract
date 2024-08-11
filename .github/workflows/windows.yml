@@ -37,4 +37,4 @@ jobs:
           #raku -I. t/0-load-test.t
           #raku -I. --ll-exception t/1-extract.t
       - name: Run Tests
-        run: zef install .
+        run: zef install --/test .
