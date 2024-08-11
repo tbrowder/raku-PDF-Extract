@@ -3,7 +3,7 @@
 PDF::Extract
 ============
 
-Simple binding of the pdftotext command line utilit
+Simple binding of the 'pdftotext' command line utility
 
 Installation
 ============
@@ -32,8 +32,8 @@ SYNOPSIS
 ========
 
     use PDF::Extract;
-    my $file = "some-pdf";
-    my $extract = Extract.new: :$file;
+    my $file = "Gazette.pdf";
+    my $extract = PDF::Extract.new: :$file;
 
     say $extract.text;
     say $extract.html;
@@ -47,7 +47,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module provides an interface to the 'pdftotext' program which is part of the 'poppler' library. The class provided, 'Extract', has the following attributes and methods to interrogate its PDF file:
+This module provides an interface to the 'pdftotext' program which is part of the 'poppler' library. The class provided, 'PDF::Extract', has the following attributes and methods to interrogate its PDF file:
 
 Attributes
 ----------
